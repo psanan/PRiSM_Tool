@@ -1,0 +1,12 @@
+[deps]
+FileIO = "5789e2e9-d7fb-5bc7-8068-2c6fae9b9549"
+Images = "916415d5-f1e6-5110-898d-aaa5f9f070e0"
+LaTeXStrings = "b964fa9f-0449-5b57-a5c2-d3ea65f4040f"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+LoopVectorization = "bdcacae8-1622-11e9-2a5c-532679323890"
+LsqFit = "2fda8390-95c7-5789-9bda-21331edee243"
+PGFPlotsX = "8314cec4-20b6-5062-9cdb-752b83310925"
+Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
+SimpleTreeMeshes = "54f36763-5384-434d-9c2b-c56b5eeb1098"
+SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
+p4est_wrapper = "3743d7c0-8adf-11ea-380b-7d33b0ecc1da"
