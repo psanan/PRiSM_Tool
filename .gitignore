@@ -1,0 +1,14 @@
+# Output files
+traces
+
+# For debugging via jupyter nbconvert to notebook
+PRiSM_Tool.jl
+
+# Jupyter
+*.ipynb_checkpoints
+
+# OS X
+.DS_Store
+
+# Vim
+.*.sw[omp]
