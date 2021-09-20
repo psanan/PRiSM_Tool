@@ -818,7 +818,9 @@ uuid = "8e850ede-7688-5339-a07c-302acd2aaf8d"
 
 [[p4est_wrapper]]
 deps = ["CEnum", "Libdl", "MPI", "P4est_jll"]
-path = "/home/patrick/.julia/dev/p4est_wrapper"
+git-tree-sha1 = "49222afc8a0639447b3753b9cfb5ddb33f3ebdf0"
+repo-rev = "master"
+repo-url = "https://github.com/gridap/p4est_wrapper.jl"
 uuid = "3743d7c0-8adf-11ea-380b-7d33b0ecc1da"
 version = "0.1.0"
 
