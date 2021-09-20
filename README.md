@@ -18,7 +18,7 @@
   - Open a terminal program (OS X: run the `Terminal` app)
   - Navigate to this directory (OS X: type `cd`, then drag this directory into the terminal, and type enter)
   - Type `jupyter notebook`, then type enter
-  - Copy the URL into your web browser. It will look something like
+  - If your browser doesn't open automatically, copy the URL into your web browser. It will look something like
 
       http://localhost:8888/?token=95ffc789ab5152418e4bfb45cfae48f636283602a6a62d9
 
