@@ -26,6 +26,7 @@ export compute_Txy
 export StokesBoundaryConditions, stokes_boundary_free_slip, stokes_boundary_dirichlet
 export populate_stokes_boundary_velocities
 
+export  locate_point, get_point_velocity
 
 # Note: there are many usages of @assert below . For maximum performance, remove them.
 
@@ -114,6 +115,7 @@ end
 
 include("SimpleTreeMeshes_creation.jl")
 include("SimpleTreeMeshes_functions.jl")
+include("SimpleTreeMeshes_particles.jl")
 include("SimpleTreeMeshes_plot.jl")
 include("SimpleTreeMeshes_field.jl")
 include("SimpleTreeMeshes_stokes.jl")

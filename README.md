@@ -25,4 +25,4 @@
 
 7. Follow the instructions in the notebook. You should, among other things, generate the following image.
 
-  TODO
+![Quickstart expected image](images/quickstart_expected.png)
