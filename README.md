@@ -21,7 +21,7 @@
 
          http://localhost:8888/?token=95ffc789ab5152418e4bfb45cfae48f636283602a6a62d9
 
-6. If it didn't open automatically, open the notebook by clicking on `PRiSM_Tool.ipynb`.
+6. Click on `PRiSM_Tool.ipynb`.
 
 7. Follow the instructions in the notebook. You should, among other things, generate the following image.
 

@@ -1,11 +1,7 @@
 ### Creation ###################################################################
 # p4est is only used in CreateSimpleTreeMesh
-if false # <-- change to true to re-install
-    using Pkg;
-    try; Pkg.rm("p4est_wrapper"); catch; end;
-    Pkg.add(url="https://github.com/psanan/p4est_wrapper.jl.git")
-end
-using p4est_wrapper
+using P4est_wrapper
+
 # Some helpers which aren't wrapped yet
 const P4EST_MAXLEVEL = Int8(30) # hard-coded default
 const P4EST_ROOT_LEN = Int32(1) << P4EST_MAXLEVEL
@@ -28,7 +24,6 @@ end
 function CreateSimpleTreeMesh(refinement_function, extra_uniform_refinement=0;
                               coordinate_scale=1.0, coordinate_offset_x=0.0,
                               coordinate_offset_y=0.0)::SimpleTreeMesh
-
     # helper functions to decode p4est's compact binary information
     function lnodes_decode(face_code::Int8)::SVector{4, Int8}
         @assert 0 <= face_code <= 0b1111
@@ -85,8 +80,8 @@ function CreateSimpleTreeMesh(refinement_function, extra_uniform_refinement=0;
     refine_fn_uniform_c = @cfunction($refine_fn_uniform, Cint, (Ptr{p4est_t}, p4est_topidx_t, Ptr{p4est_quadrant}))
 
     # Initialize p4est, which is only used in this function
-    verbosity = p4est_wrapper.SC_LP_ERROR
-    #verbosity = p4est_wrapper.SC_LP_DEFAULT # more info, useful for testing
+    verbosity = P4est_wrapper.SC_LP_ERROR
+    #verbosity = P4est_wrapper.SC_LP_DEFAULT # more info, useful for testing
     sc_init(MPI.COMM_WORLD, Cint(true), Cint(true), C_NULL, verbosity)
     p4est_init(C_NULL, verbosity)
 
@@ -94,12 +89,12 @@ function CreateSimpleTreeMesh(refinement_function, extra_uniform_refinement=0;
     connectivity = p4est_connectivity_new_unitsquare()
     forest = p4est_new(MPI.COMM_WORLD, connectivity, 0, C_NULL, C_NULL);
     p4est_refine(forest, 1, refine_fn_c, C_NULL)  # second argument is recursive refinement
-    p4est_balance(forest, p4est_wrapper.P4EST_CONNECT_FULL, C_NULL)
+    p4est_balance(forest, P4est_wrapper.P4EST_CONNECT_FULL, C_NULL)
     for  _ in 1:extra_uniform_refinement
       p4est_refine(forest, 0, refine_fn_uniform_c, C_NULL)  # second argument is recursive refinement
     end
 
-    ghost = p4est_ghost_new(forest, p4est_wrapper.P4EST_CONNECT_FULL)
+    ghost = p4est_ghost_new(forest, P4est_wrapper.P4EST_CONNECT_FULL)
 
     # For convenience, use p4est's numbering routines, even though they
     # are specialized for finite element methods.
@@ -345,7 +340,9 @@ function CreateSimpleTreeMesh(refinement_function, extra_uniform_refinement=0;
     p4est_destroy(forest)
     p4est_connectivity_destroy(connectivity)
     sc_finalize()
-    MPI.Finalize()
+    if (MPI.Initialized() && !isinteractive())
+        MPI.Finalize()
+    end
 
     # Complete corner types
     for i = 1:tree.nc
