@@ -2,6 +2,8 @@
 
 ## Quickstart
 
+0. Copy this project to your local computer (e.g. GitHub: click the green "Code" dropdown and download a ZIP file).
+
 1. Install Jupyter. The easiest way is to install [Anaconda](https://anaconda.com), but if you already work with Python, you can [install it with `pip`, `conda`, etc.](https://jupyter.org/install)
 
 2. Install Julia by following [these instructions](https://julialang.org/downloads/).
@@ -14,8 +16,8 @@
 
 4. Run Jupyter.
 
-    - Open a terminal program (OS X: run the `Terminal` app)
-    - Navigate to this directory (OS X: type `cd `(with the space), then drag this directory into the terminal and enter)
+    - Open a terminal program (e.g. OS X: run the `Terminal` app)
+    - Navigate to this directory (e.g. OS X: type `cd `(with the space), then drag this directory into the terminal and enter)
     - Enter `jupyter notebook`
     - If your browser doesn't open automatically, copy the URL into your web browser. It will look something like
 
