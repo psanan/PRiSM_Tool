@@ -17,7 +17,5 @@ SynthDef(\test, { | out, freq = 440, amp = 0.1, nharms = 10, pan = 0, gate = 1 |
     OffsetOut.ar(out, Pan2.ar(audio, pan, env) );
 }).add;
 
-
-Pbind(\instrument, \test, \freq, Pseq(~freqs2, inf), \dur, 0.1).play;
-
+Pbind(\instrument, \test, \freq, Pseq(~freqs, inf), \dur, 0.1).play;
 )
