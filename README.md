@@ -1,4 +1,4 @@
-# Experimental Tool for PRiSM
+# 2D AMR Tool for PRiSM
 
 ## Quickstart
 
@@ -27,3 +27,4 @@
 7. Follow the instructions in the notebook. You should, among other things, generate the following image.
 
 ![Quickstart expected image](images/quickstart_expected.png)
+
