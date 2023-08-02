@@ -1,5 +1,9 @@
 # 2D AMR Tool for PRiSM
 
+For more information, see our upcoming blog post at the [RNCM PRiSM blog](https://www.rncm.ac.uk/research/research-centres-rncm/prism/prism-blog/).
+
+This tool relies heavily on our [SimpleTreeMeshes.jl](https://github.com/psanan/SimpleTreeMeshes.jl/).
+
 ## Quickstart
 
 0. Copy this project to your local computer (GitHub: click the green "Code" dropdown and download a ZIP file).
